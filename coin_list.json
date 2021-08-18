@@ -1,0 +1,604 @@
+{
+  "data": [
+    {
+      "code": "bitcoin",
+      "fullname": "比特币",
+      "id": 1,
+      "name": "BTC"
+    },
+    {
+      "code": "ethereum",
+      "fullname": "以太坊",
+      "id": 2,
+      "name": "ETH"
+    },
+    {
+      "code": "tether",
+      "fullname": "泰达币",
+      "id": 3,
+      "name": "USDT"
+    },
+    {
+      "code": "cardano",
+      "fullname": "艾达币",
+      "id": 4,
+      "name": "ADA"
+    },
+    {
+      "code": "binance-coin",
+      "fullname": "币安币",
+      "id": 5,
+      "name": "BNB"
+    },
+    {
+      "code": "ripple",
+      "fullname": "瑞波币",
+      "id": 6,
+      "name": "XRP"
+    },
+    {
+      "code": "dogecoin",
+      "fullname": "狗狗币",
+      "id": 7,
+      "name": "DOGE"
+    },
+    {
+      "code": "polkadot100",
+      "fullname": "波卡币",
+      "id": 8,
+      "name": "DOT"
+    },
+    {
+      "code": "solana",
+      "fullname": "Solana",
+      "id": 9,
+      "name": "SOL"
+    },
+    {
+      "code": "uniswap",
+      "fullname": "Uniswap",
+      "id": 10,
+      "name": "UNI"
+    },
+    {
+      "code": "terra",
+      "fullname": "Terra",
+      "id": 11,
+      "name": "LUNA"
+    },
+    {
+      "code": "bitcoin-cash",
+      "fullname": "比特现金",
+      "id": 12,
+      "name": "BCH"
+    },
+    {
+      "code": "litecoin",
+      "fullname": "莱特币",
+      "id": 13,
+      "name": "LTC"
+    },
+    {
+      "code": "chainlink",
+      "fullname": "ChainLink",
+      "id": 14,
+      "name": "LINK"
+    },
+    {
+      "code": "wrapped-bitcoin",
+      "fullname": "Wrapped Bitcoin",
+      "id": 15,
+      "name": "WBTC"
+    },
+    {
+      "code": "matictoken",
+      "fullname": "Polygon",
+      "id": 16,
+      "name": "MATIC"
+    },
+    {
+      "code": "ftx-token",
+      "fullname": "FTX Token",
+      "id": 17,
+      "name": "FTT"
+    },
+    {
+      "code": "stellar",
+      "fullname": "恒星币",
+      "id": 18,
+      "name": "XLM"
+    },
+    {
+      "code": "vechaincom",
+      "fullname": "唯链",
+      "id": 19,
+      "name": "VET"
+    },
+    {
+      "code": "ethereum-classic",
+      "fullname": "以太经典",
+      "id": 20,
+      "name": "ETC"
+    },
+    {
+      "code": "thetatoken",
+      "fullname": "Theta",
+      "id": 21,
+      "name": "THETA"
+    },
+    {
+      "code": "filecoinnew",
+      "fullname": "Filecoin",
+      "id": 22,
+      "name": "FIL"
+    },
+    {
+      "code": "tron",
+      "fullname": "波场",
+      "id": 23,
+      "name": "TRX"
+    },
+    {
+      "code": "dai",
+      "fullname": "Dai Stablecoin",
+      "id": 24,
+      "name": "DAI"
+    },
+    {
+      "code": "okb",
+      "fullname": "OK币",
+      "id": 25,
+      "name": "OKB"
+    },
+    {
+      "code": "aave-new",
+      "fullname": "Aave",
+      "id": 26,
+      "name": "AAVE"
+    },
+    {
+      "code": "eos",
+      "fullname": "柚子",
+      "id": 27,
+      "name": "EOS"
+    },
+    {
+      "code": "monero",
+      "fullname": "门罗币",
+      "id": 28,
+      "name": "XMR"
+    },
+    {
+      "code": "pancakeswap",
+      "fullname": "PancakeSwap",
+      "id": 29,
+      "name": "CAKE"
+    },
+    {
+      "code": "axieinfinity",
+      "fullname": "Axie Infinity",
+      "id": 30,
+      "name": "AXS"
+    },
+    {
+      "code": "neo",
+      "fullname": "Neo",
+      "id": 31,
+      "name": "NEO"
+    },
+    {
+      "code": "maker",
+      "fullname": "Maker",
+      "id": 32,
+      "name": "MKR"
+    },
+    {
+      "code": "avalanche",
+      "fullname": "Avalanche",
+      "id": 33,
+      "name": "AVAX"
+    },
+    {
+      "code": "cosmos",
+      "fullname": "阿童木",
+      "id": 34,
+      "name": "ATOM"
+    },
+    {
+      "code": "bitcoin-cash-sv",
+      "fullname": "比特币SV",
+      "id": 35,
+      "name": "BSV"
+    },
+    {
+      "code": "iota",
+      "fullname": "埃欧塔",
+      "id": 36,
+      "name": "IOTA"
+    },
+    {
+      "code": "bittorrent",
+      "fullname": "BitTorrent",
+      "id": 37,
+      "name": "BTT"
+    },
+    {
+      "code": "kusama",
+      "fullname": "Kusama",
+      "id": 38,
+      "name": "KSM"
+    },
+    {
+      "code": "tezos",
+      "fullname": "Tezos",
+      "id": 39,
+      "name": "XTZ"
+    },
+    {
+      "code": "waves",
+      "fullname": "波币",
+      "id": 40,
+      "name": "WAVES"
+    },
+    {
+      "code": "ht",
+      "fullname": "火币积分",
+      "id": 41,
+      "name": "HT"
+    },
+    {
+      "code": "elrond",
+      "fullname": "Elrond",
+      "id": 42,
+      "name": "EGLD"
+    },
+    {
+      "code": "algorand",
+      "fullname": "Algorand",
+      "id": 43,
+      "name": "ALGO"
+    },
+    {
+      "code": "compound",
+      "fullname": "Compound",
+      "id": 44,
+      "name": "COMP"
+    },
+    {
+      "code": "decred",
+      "fullname": "Decred",
+      "id": 45,
+      "name": "DCR"
+    },
+    {
+      "code": "dash",
+      "fullname": "达世币",
+      "id": 46,
+      "name": "DASH"
+    },
+    {
+      "code": "chiliz",
+      "fullname": "Chiliz",
+      "id": 47,
+      "name": "CHZ"
+    },
+    {
+      "code": "hederahashgraph",
+      "fullname": "Hedera Hashgraph",
+      "id": 48,
+      "name": "HBAR"
+    },
+    {
+      "code": "holo",
+      "fullname": "Holo",
+      "id": 49,
+      "name": "HOT"
+    },
+    {
+      "code": "nem",
+      "fullname": "新经币",
+      "id": 50,
+      "name": "XEM"
+    },
+    {
+      "code": "synthetix-network-token",
+      "fullname": "Synthetix",
+      "id": 51,
+      "name": "SNX"
+    },
+    {
+      "code": "sushi",
+      "fullname": "寿司",
+      "id": 52,
+      "name": "SUSHI"
+    },
+    {
+      "code": "zcash",
+      "fullname": "大零币",
+      "id": 53,
+      "name": "ZEC"
+    },
+    {
+      "code": "blockstack",
+      "fullname": "Stacks",
+      "id": 54,
+      "name": "STX"
+    },
+    {
+      "code": "enjin-coin",
+      "fullname": "恩金币",
+      "id": 55,
+      "name": "ENJ"
+    },
+    {
+      "code": "yearnfinance",
+      "fullname": "yearn.finance",
+      "id": 56,
+      "name": "YFI"
+    },
+    {
+      "code": "nearprotocol",
+      "fullname": "NEAR Protocol",
+      "id": 57,
+      "name": "NEAR"
+    },
+    {
+      "code": "true-usd",
+      "fullname": "TrueUSD",
+      "id": 58,
+      "name": "TUSD"
+    },
+    {
+      "code": "qtum",
+      "fullname": "量子链",
+      "id": 59,
+      "name": "QTUM"
+    },
+    {
+      "code": "decentraland",
+      "fullname": "Decentraland",
+      "id": 60,
+      "name": "MANA"
+    },
+    {
+      "code": "ravencoin",
+      "fullname": "Ravencoin",
+      "id": 61,
+      "name": "RVN"
+    },
+    {
+      "code": "fantom",
+      "fullname": "Fantom",
+      "id": 62,
+      "name": "FTM"
+    },
+    {
+      "code": "graph",
+      "fullname": "Graph",
+      "id": 63,
+      "name": "GRT"
+    },
+    {
+      "code": "zilliqa",
+      "fullname": "Zilliqa",
+      "id": 64,
+      "name": "ZIL"
+    },
+    {
+      "code": "basic-attention-token",
+      "fullname": "注意力币",
+      "id": 65,
+      "name": "BAT"
+    },
+    {
+      "code": "bitcoin-gold",
+      "fullname": "比特黄金",
+      "id": 66,
+      "name": "BTG"
+    },
+    {
+      "code": "nexo",
+      "fullname": "Nexo",
+      "id": 67,
+      "name": "NEXO"
+    },
+    {
+      "code": "digibyte",
+      "fullname": "极特币",
+      "id": 68,
+      "name": "DGB"
+    },
+    {
+      "code": "harmonyone",
+      "fullname": "Harmony",
+      "id": 69,
+      "name": "ONE"
+    },
+    {
+      "code": "kcs",
+      "fullname": "KuCoin Token",
+      "id": 70,
+      "name": "KCS"
+    },
+    {
+      "code": "siacoin",
+      "fullname": "云储币",
+      "id": 71,
+      "name": "SC"
+    },
+    {
+      "code": "bitquence",
+      "fullname": "Voyager Token",
+      "id": 72,
+      "name": "VGX"
+    },
+    {
+      "code": "ont",
+      "fullname": "本体",
+      "id": 73,
+      "name": "ONT"
+    },
+    {
+      "code": "raiblocks",
+      "fullname": "纳诺",
+      "id": 74,
+      "name": "NANO"
+    },
+    {
+      "code": "zencash",
+      "fullname": "Horizen",
+      "id": 75,
+      "name": "ZEN"
+    },
+    {
+      "code": "0x",
+      "fullname": "0x协议",
+      "id": 76,
+      "name": "ZRX"
+    },
+    {
+      "code": "lotex",
+      "fullname": "艾坦星",
+      "id": 77,
+      "name": "IOTX"
+    },
+    {
+      "code": "omisego",
+      "fullname": "嫩模币",
+      "id": 78,
+      "name": "OMG"
+    },
+    {
+      "code": "icon",
+      "fullname": "ICON",
+      "id": 79,
+      "name": "ICX"
+    },
+    {
+      "code": "ankr",
+      "fullname": "Ankr",
+      "id": 80,
+      "name": "ANKR"
+    },
+    {
+      "code": "bancor",
+      "fullname": "Bancor",
+      "id": 81,
+      "name": "BNT"
+    },
+    {
+      "code": "uma",
+      "fullname": "UMA",
+      "id": 82,
+      "name": "UMA"
+    },
+    {
+      "code": "lisk",
+      "fullname": "应用链",
+      "id": 83,
+      "name": "LSK"
+    },
+    {
+      "code": "republic-protocol",
+      "fullname": "Republic Protocol",
+      "id": 84,
+      "name": "REN"
+    },
+    {
+      "code": "gatechaintoken",
+      "fullname": "Gatechain Token",
+      "id": 85,
+      "name": "GT"
+    },
+    {
+      "code": "dent",
+      "fullname": "Dentcoin",
+      "id": 86,
+      "name": "DENT"
+    },
+    {
+      "code": "verge",
+      "fullname": "Verge",
+      "id": 87,
+      "name": "XVG"
+    },
+    {
+      "code": "curve",
+      "fullname": "Curve",
+      "id": 88,
+      "name": "CRV"
+    },
+    {
+      "code": "iost",
+      "fullname": "IOST",
+      "id": 89,
+      "name": "IOST"
+    },
+    {
+      "code": "btcd",
+      "fullname": "比特币钻石",
+      "id": 90,
+      "name": "BCD"
+    },
+    {
+      "code": "1inchtoken",
+      "fullname": "1inch Token",
+      "id": 91,
+      "name": "1INCH"
+    },
+    {
+      "code": "loopring",
+      "fullname": "路印科技",
+      "id": 92,
+      "name": "LRC"
+    },
+    {
+      "code": "serum",
+      "fullname": "Serum",
+      "id": 93,
+      "name": "SRM"
+    },
+    {
+      "code": "kava",
+      "fullname": "Kava",
+      "id": 94,
+      "name": "KAVA"
+    },
+    {
+      "code": "rsr",
+      "fullname": "RSR",
+      "id": 95,
+      "name": "RSR"
+    },
+    {
+      "code": "fetchai",
+      "fullname": "Fetch.AI",
+      "id": 96,
+      "name": "FET"
+    },
+    {
+      "code": "kyber-network",
+      "fullname": "Kyber Network",
+      "id": 97,
+      "name": "KNC"
+    },
+    {
+      "code": "celo",
+      "fullname": "Celo",
+      "id": 98,
+      "name": "CELO"
+    },
+    {
+      "code": "thesandbox",
+      "fullname": "The Sandbox",
+      "id": 99,
+      "name": "SAND"
+    },
+    {
+      "code": "rlc",
+      "fullname": "云算宝",
+      "id": 100,
+      "name": "RLC"
+    }
+  ]
+}
