@@ -1,5 +1,5 @@
 import requests
-from system import IFTTT
+from config.system import Notice
 
 def send_notice(event_name, key, text):
     url = "https://maker.ifttt.com/trigger/"+event_name+"/with/key/"+key+""
@@ -9,7 +9,7 @@ def send_notice(event_name, key, text):
         'User-Agent': "PostmanRuntime/7.15.0",
         'Accept': "*/*",
         'Cache-Control': "no-cache",
-        'Postman-Token': IFTTT.TOKEN,
+        'Postman-Token': Notice.TOKEN,
         'Host': "maker.ifttt.com",
         'accept-encoding': "gzip, deflate",
         'content-length': "63",

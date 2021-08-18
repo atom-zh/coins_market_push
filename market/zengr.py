@@ -1,7 +1,7 @@
 import json
 import urllib.request
 import time
-from system import Zengr
+from config.system import Zengr
 
 symbol = 'ETH'
 

@@ -1,9 +1,8 @@
-import os
 import requests
 import json
-from system import Notice, PATH
-from notice2iphone import send_notice
-from utils import save_json, load_json
+from config.system import Notice, PATH
+from utils.notice2iphone import send_notice
+from utils.utils import save_json, load_json
 
 symbol = 'ethereum'
 url1 ='https://dncapi.bqiapp.com/api/coin/web-charts?code=' + symbol +'&type=d&webp=0'
@@ -46,6 +45,7 @@ def get_coin(seq):
     return result
 
 def get_conin_seq(symbol):
+    print(PATH.PATH_JSON)
     coin_dict = load_json(PATH.PATH_JSON)
     for list in coin_dict['data']:
         # print(list)
