@@ -1,0 +1,5 @@
+wechaty~=0.8
+flake8
+pytest
+pylint
+pylint-quotes

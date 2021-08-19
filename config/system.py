@@ -13,3 +13,6 @@ class Zengr:
 
 class PATH:
     PATH_JSON = path_root + '/coin_list.json'
+
+class WECHAT:
+    TOKEN = '{your wechaty token}'

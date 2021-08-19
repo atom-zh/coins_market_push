@@ -52,9 +52,27 @@ def get_conin_seq(symbol):
         if list['name'] == symbol.upper():
             return list['id']
 
-#gen_coin_list(idx)
+def get_name_list():
+    print(PATH.PATH_JSON)
+    coin_dict = load_json(PATH.PATH_JSON)
+    name_list = []
+    for list in coin_dict['data']:
+        name_list.append(list['name'])
+    return name_list
 
-symbol = 'eth'
-idx = get_conin_seq(symbol)
-result = get_coin(idx)
-send_notice(Notice.EVENT_NAME, Notice.KEY, result['data'][0]['fullname']+' $'+str(result['data'][0]['current_price_usd']))
+def get_market(symbol):
+    #symbol = 'eth'
+    idx = get_conin_seq(symbol)
+    result = get_coin(idx)
+    if result['data'][0]['name'] != symbol:
+        gen_coin_list()
+        idx = get_conin_seq(symbol)
+        result = get_coin(idx)
+
+    ret = result['data'][0]['fullname'] + ' ' + result['data'][0]['name'] + '\n' \
+            '当前价格￥: ' + str(result['data'][0]['current_price']) + '\n' \
+            '当前价格$: ' + str(result['data'][0]['current_price_usd']) + '\n' \
+            '24H涨跌幅: ' + str(result['data'][0]['change_percent']) + '%\n' \
+            '24H换手率: ' + str(result['data'][0]['turnoverrate'])
+    return ret
+    #send_notice(Notice.EVENT_NAME, Notice.KEY, result['data'][0]['fullname']+' $'+str(result['data'][0]['current_price_usd']))
