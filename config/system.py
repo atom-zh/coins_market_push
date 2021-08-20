@@ -16,3 +16,6 @@ class PATH:
 
 class WECHAT:
     TOKEN = '{your wechaty token}'
+
+class CoinGK:
+    PATH_JSON = path_root + '/conin_list_cgk.json'
