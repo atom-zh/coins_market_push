@@ -7,7 +7,7 @@ import pathlib
 project_path = str(pathlib.Path(os.path.abspath(__file__)).parent.parent)
 sys.path.append(project_path)
 
-from market.fxh import get_market, get_name_list
+from market.fxh import get_market, get_conin_seq
 from config.system import WECHAT
 from wechaty import (
     Contact,
@@ -48,10 +48,11 @@ async def on_message(msg: Message):
 
     rev_str = msg.text().replace(' ', '')
     symbol = rev_str.split(' ')[-1]
-    print(symbol.upper())
-    if symbol.upper() in get_name_list():
+    print(symbol)
+    if get_conin_seq(symbol) > 0:
         #FileBox.from_json()
-        send_msg = get_market(symbol.upper())
+        send_msg = get_market(symbol)
+        print(send_msg)
         await msg.say(send_msg)
 
 async def on_scan(

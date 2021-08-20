@@ -3,11 +3,11 @@ import sys
 import pathlib
 import requests
 import json
+import time
 project_path = str(pathlib.Path(os.path.abspath(__file__)).parent.parent)
 sys.path.append(project_path)
 
-from config.system import Notice, PATH
-from utils.notice2iphone import send_notice
+from config.system import PATH
 from utils.utils import save_json, load_json
 
 symbol = 'ethereum'
@@ -19,21 +19,25 @@ headers={
     #'Accepts': 'application/json',
 }
 
+coin_dict = load_json(PATH.PATH_JSON)
+
 def gen_coin_list():
-    url = 'https://dncapi.bqiapp.com/api/coin/web-coinrank?pagesize=100&page=1&type=-1&webp=1'
-    response = requests.get(url, headers=headers)
-    result = json.loads(response.content)
-    coin_lists = {'data': []}
+    page_num = 5
     id = 0
-    for list in result['data']:
-        print(list)
-        tmp = dict()
-        id = id + 1
-        tmp['id'] = id
-        tmp['code'] = list['code']
-        tmp['name'] = list['name']
-        tmp['fullname'] = list['fullname']
-        coin_lists['data'].append(tmp)
+    coin_lists = {'data': []}
+    for page in range(page_num):
+        url = 'https://dncapi.bqiapp.com/api/coin/web-coinrank?pagesize=100&page='+str(page+1)+'&type=-1&webp=2'
+        response = requests.get(url, headers=headers)
+        result = json.loads(response.content)
+        for list in result['data']:
+            tmp = dict()
+            id = id + 1
+            tmp['id'] = id
+            tmp['code'] = list['code']
+            tmp['name'] = list['name']
+            tmp['fullname'] = list['fullname']
+            coin_lists['data'].append(tmp)
+        time.sleep(1)
     save_json(coin_lists, PATH.PATH_JSON)
 
 def get_coin(seq):
@@ -43,42 +47,33 @@ def get_coin(seq):
     response = requests.get(url, headers=headers)
     result = json.loads(response.content)
     print(result)
-    #print('币种：' + result['data'][0]['fullname'] + ' ' + result['data'][0]['name'])
-    #print('当前价格￥: ' + str(result['data'][0]['current_price']))
-    #print('当前价格$: ' + str(result['data'][0]['current_price_usd']))
-    #print('24H涨跌幅: ' + str(result['data'][0]['change_percent']))
-    #print('24H换手率: ' + str(result['data'][0]['turnoverrate']))
     return result
 
 def get_conin_seq(symbol):
-    print(PATH.PATH_JSON)
-    coin_dict = load_json(PATH.PATH_JSON)
+    global coin_dict
     for list in coin_dict['data']:
         # print(list)
         if list['name'] == symbol.upper():
             return list['id']
-
-def get_name_list():
-    print(PATH.PATH_JSON)
-    coin_dict = load_json(PATH.PATH_JSON)
-    name_list = []
-    for list in coin_dict['data']:
-        name_list.append(list['name'])
-    return name_list
+    return -1
 
 def get_market(symbol):
     #symbol = 'eth'
+    symbol = symbol.upper()
     idx = get_conin_seq(symbol)
     result = get_coin(idx)
     if result['data'][0]['name'] != symbol:
-        gen_coin_list()
+        print('Symbol not match. Regenerate the json file')
+        gen_coin_list() # 重新生成
+        global coin_dict
+        coin_dict = load_json(PATH.PATH_JSON) # 重新加载json文件
         idx = get_conin_seq(symbol)
         result = get_coin(idx)
 
     ret = result['data'][0]['fullname'] + ' ' + result['data'][0]['name'] + '\n' \
-            '当前价格￥: ' + str(result['data'][0]['current_price']) + '\n' \
-            '当前价格$: ' + str(result['data'][0]['current_price_usd']) + '\n' \
+            '价格 :' +' $' + str(result['data'][0]['current_price_usd']) + '\n' \
+            '价格 :' +' ￥' + str(result['data'][0]['current_price']) + '\n' \
             '24H涨跌幅: ' + str(result['data'][0]['change_percent']) + '%\n' \
-            '24H换手率: ' + str(result['data'][0]['turnoverrate'])
+            '24H换手率: ' + str(result['data'][0]['turnoverrate']) + '%'
     return ret
     #send_notice(Notice.EVENT_NAME, Notice.KEY, result['data'][0]['fullname']+' $'+str(result['data'][0]['current_price_usd']))
