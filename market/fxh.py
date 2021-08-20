@@ -1,5 +1,11 @@
+import os
+import sys
+import pathlib
 import requests
 import json
+project_path = str(pathlib.Path(os.path.abspath(__file__)).parent.parent)
+sys.path.append(project_path)
+
 from config.system import Notice, PATH
 from utils.notice2iphone import send_notice
 from utils.utils import save_json, load_json
@@ -37,11 +43,11 @@ def get_coin(seq):
     response = requests.get(url, headers=headers)
     result = json.loads(response.content)
     print(result)
-    print('币种：' + result['data'][0]['fullname'] + ' ' + result['data'][0]['name'])
-    print('当前价格￥: ' + str(result['data'][0]['current_price']))
-    print('当前价格$: ' + str(result['data'][0]['current_price_usd']))
-    print('24H涨跌幅: ' + str(result['data'][0]['change_percent']))
-    print('24H换手率: ' + str(result['data'][0]['turnoverrate']))
+    #print('币种：' + result['data'][0]['fullname'] + ' ' + result['data'][0]['name'])
+    #print('当前价格￥: ' + str(result['data'][0]['current_price']))
+    #print('当前价格$: ' + str(result['data'][0]['current_price_usd']))
+    #print('24H涨跌幅: ' + str(result['data'][0]['change_percent']))
+    #print('24H换手率: ' + str(result['data'][0]['turnoverrate']))
     return result
 
 def get_conin_seq(symbol):

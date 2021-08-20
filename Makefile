@@ -54,7 +54,6 @@ pytype:
 .PHONY: install
 install:
 	pip3 install -r requirements.txt
-	pip3 install -r requirements-dev.txt
 
 .PHONY: pytest
 pytest:

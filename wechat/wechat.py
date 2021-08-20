@@ -4,7 +4,7 @@ import sys
 import asyncio
 import logging
 import pathlib
-project_path = str(pathlib.Path(os.path.abspath(__file__)).parent.parent.parent)
+project_path = str(pathlib.Path(os.path.abspath(__file__)).parent.parent)
 sys.path.append(project_path)
 
 from market.fxh import get_market, get_name_list
@@ -98,3 +98,4 @@ async def main():
     print('[Python Wechaty] Ding Dong Bot started.')
 
 asyncio.run(main())
+
