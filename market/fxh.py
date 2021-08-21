@@ -70,10 +70,17 @@ def get_market(symbol):
         idx = get_conin_seq(symbol)
         result = get_coin(idx)
 
-    ret = result['data'][0]['fullname'] + ' ' + result['data'][0]['name'] + '\n' \
-            '价格 :' +' $' + str(result['data'][0]['current_price_usd']) + '\n' \
-            '价格 :' +' ￥' + str(result['data'][0]['current_price']) + '\n' \
-            '24H涨跌幅: ' + str(result['data'][0]['change_percent']) + '%\n' \
-            '24H换手率: ' + str(result['data'][0]['turnoverrate']) + '%'
+    ret = '【名称】 ' + result['data'][0]['fullname'] + '-' + result['data'][0]['name'] + '\n' \
+            '【USD价格】 ' +'$' + str(result['data'][0]['current_price_usd']) + '\n' \
+            '【CNY价格】 ' +'¥' + str(result['data'][0]['current_price']) + '\n' \
+            '【全球市值】 ' + '$' + str('%.2f' % (result['data'][0]['marketcap']/100000000)) + '亿\n' \
+            '【24H涨幅】 ' + str(result['data'][0]['change_percent']) + '%\n' \
+            '【24H换手】 ' + str(result['data'][0]['turnoverrate']) + '%\n\n' \
+            + str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) ) + '\n' \
+            '数据来源：非小号'
+
+    print(ret)
     return ret
     #send_notice(Notice.EVENT_NAME, Notice.KEY, result['data'][0]['fullname']+' $'+str(result['data'][0]['current_price_usd']))
+
+get_market('btc')
