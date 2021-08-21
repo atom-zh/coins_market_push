@@ -53,7 +53,11 @@ async def on_message(msg: Message):
         symbol = text
     talker = msg.talker()
 
-    if get_conin_seq(symbol) > 0:
+    if symbol == '多空':
+        await room.say('\n抱歉！【多空】正在开发中...', mention_ids=[talker.contact_id])
+    elif symbol == '灰度':
+        await room.say('\n抱歉！【灰度】正在开发中...', mention_ids=[talker.contact_id])
+    elif get_conin_seq(symbol) > 0:
         send_msg = get_price(symbol)
         print(send_msg)
         await room.say(send_msg, mention_ids=[talker.contact_id])
