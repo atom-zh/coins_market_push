@@ -41,20 +41,22 @@ async def on_message(msg: Message):
             name='ding-dong.jpg'
         )
         await msg.say(file_box)
-
-    print(msg.text())
-    if '@Robot' not in msg.text():
-        return
-
-    rev_str = msg.text().replace(' ', '')
-    symbol = rev_str.split(' ')[-1]
     """
-    print(msg.text())
-    if get_conin_seq(msg.text()) > 0:
-        #FileBox.from_json()
-        send_msg = get_price(msg.text())
+    text: str = msg.text()
+    room: Optional[Room] = msg.room()
+    print(text)
+    print(room)
+    if text.startswith('@Robot'):
+        rev_str = text.replace(' ', '')
+        symbol = rev_str.split(' ')[-1]
+    else:
+        symbol = text
+    talker = msg.talker()
+
+    if get_conin_seq(symbol) > 0:
+        send_msg = get_price(symbol)
         print(send_msg)
-        await msg.say(send_msg)
+        await room.say(send_msg, mention_ids=[talker.contact_id])
 
 async def on_scan(
         qrcode: str,

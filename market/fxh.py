@@ -70,7 +70,8 @@ def get_price(symbol):
         idx = get_conin_seq(symbol)
         result = get_coin(idx)
 
-    ret = '【名称】 ' + result['data'][0]['fullname'] + '-' + result['data'][0]['name'] + '\n' \
+    ret =   '\n' \
+            '【名称】 ' + result['data'][0]['fullname'] + '-' + result['data'][0]['name'] + '\n' \
             '【USD价格】 ' +'$' + str(result['data'][0]['current_price_usd']) + '\n' \
             '【CNY价格】 ' +'¥' + str(result['data'][0]['current_price']) + '\n' \
             '【全球市值】 ' + '$' + str('%.2f' % (result['data'][0]['marketcap']/100000000)) + '亿\n' \
@@ -78,7 +79,5 @@ def get_price(symbol):
             '【24H换手】 ' + str(result['data'][0]['turnoverrate']) + '%\n\n' \
             + str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) ) + '\n' \
             '数据来源：非小号'
-
-    print(ret)
     return ret
     #send_notice(Notice.EVENT_NAME, Notice.KEY, result['data'][0]['fullname']+' $'+str(result['data'][0]['current_price_usd']))
