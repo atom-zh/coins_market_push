@@ -7,7 +7,7 @@ import pathlib
 project_path = str(pathlib.Path(os.path.abspath(__file__)).parent.parent)
 sys.path.append(project_path)
 
-from market.fxh import get_market, get_conin_seq
+from market.fxh import get_price, get_conin_seq
 from config.system import WECHAT
 from wechaty import (
     Contact,
@@ -41,17 +41,18 @@ async def on_message(msg: Message):
             name='ding-dong.jpg'
         )
         await msg.say(file_box)
-    """
+
     print(msg.text())
     if '@Robot' not in msg.text():
         return
 
     rev_str = msg.text().replace(' ', '')
     symbol = rev_str.split(' ')[-1]
-    print(symbol)
-    if get_conin_seq(symbol) > 0:
+    """
+    print(msg.text())
+    if get_conin_seq(msg.text()) > 0:
         #FileBox.from_json()
-        send_msg = get_market(symbol)
+        send_msg = get_price(msg.text())
         print(send_msg)
         await msg.say(send_msg)
 

@@ -57,7 +57,7 @@ def get_conin_seq(symbol):
             return list['id']
     return -1
 
-def get_market(symbol):
+def get_price(symbol):
     #symbol = 'eth'
     symbol = symbol.upper()
     idx = get_conin_seq(symbol)
@@ -82,5 +82,3 @@ def get_market(symbol):
     print(ret)
     return ret
     #send_notice(Notice.EVENT_NAME, Notice.KEY, result['data'][0]['fullname']+' $'+str(result['data'][0]['current_price_usd']))
-
-get_market('btc')
