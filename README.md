@@ -21,6 +21,10 @@
 * 将数字货币行情推送到手机提醒
 * 当机器人在群里被@后，根据@内容，回复相应数字货币的行情
 
+## 使用方法
+
+[使用方法介绍:WIKI](https://github.com/atom-zh/coins_market_push/wiki/%E5%9F%BA%E4%BA%8Epython-Wechaty%E7%9A%84%E5%BE%AE%E4%BF%A1%E7%BE%A4%E8%99%9A%E6%8B%9F%E5%B8%81%E6%8A%A5%E4%BB%B7%E6%9C%BA%E5%99%A8%E4%BA%BA)
+
 ---
 # TODO
 - 通过合适的算法，计算币价的波动，然后推送
